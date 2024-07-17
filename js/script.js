@@ -28,32 +28,24 @@ createApp({
                 }
             ]
         }
+    },
+    methods: {
+        next_image(){
+            if (this.active_image == this.slides.length - 1){
+                this.active_image = 0;
+            }
+            else {
+                this.active_image++;
+            }
+        },
+        prev_image(){
+            if (this.active_image == 0){
+                this.active_image = this.slides.length - 1;
+            }
+            else {
+                this.active_image--;
+            }
+        }
     }
 }).mount('#app')
-
-
-//SOLUZIONE\\
-
-// active_image = 0;
-
-// createApp({
-//     methods: {
-//         next_image(){
-//             if (this.active_image == this.slides.length - 1){
-//                 this.active_image = 0;
-//             }
-//             else {
-//                 this.active_image++;
-//             }
-//         },
-//         prev_image(){
-//             if (this.active_image == 0){
-//                 this.active_image = this.slides.length - 1;
-//             }
-//             else {
-//                 this.active_image--;
-//             }
-//         }
-//     }  
-// }).mount('#app');
     
